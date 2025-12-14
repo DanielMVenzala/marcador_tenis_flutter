@@ -1,0 +1,72 @@
+[
+  {
+    "nombre": "Carlos Alcaraz",
+    "edad": 22,
+    "ranking": 1,
+    "pais": "España",
+    "foto": "https://www.atptour.com/-/media/alias/player-gladiator-headshot/a0e2"
+  },
+  {
+    "nombre": "Jannik Sinner",
+    "edad": 24,
+    "ranking": 2,
+    "pais": "Italia",
+    "foto": "https://www.atptour.com/-/media/alias/player-gladiator-headshot/s0ag"
+  },
+  {
+    "nombre": "Alexander Zverev",
+    "edad": 28,
+    "ranking": 3,
+    "pais": "Alemania",
+    "foto": "https://www.atptour.com/-/media/alias/player-gladiator-headshot/z355"
+  },
+  {
+    "nombre": "Novak Djokovic",
+    "edad": 38,
+    "ranking": 4,
+    "pais": "Serbia",
+    "foto": "https://www.atptour.com/-/media/alias/player-gladiator-headshot/d643"
+  },
+  {
+    "nombre": "Félix Auger-Aliassime",
+    "edad": 25,
+    "ranking": 5,
+    "pais": "Canadá",
+    "foto": "https://www.atptour.com/-/media/alias/player-gladiator-headshot/ag37"
+  },
+  {
+    "nombre": "Taylor Fritz",
+    "edad": 28,
+    "ranking": 6,
+    "pais": "Estados Unidos",
+    "foto": "https://www.atptour.com/-/media/alias/player-gladiator-headshot/fb98"
+  },
+  {
+    "nombre": "Alex de Minaur",
+    "edad": 26,
+    "ranking": 7,
+    "pais": "Australia",
+    "foto": "https://www.atptour.com/-/media/alias/player-gladiator-headshot/dh58"
+  },
+  {
+    "nombre": "Lorenzo Musetti",
+    "edad": 23,
+    "ranking": 8,
+    "pais": "Italia",
+    "foto": "https://www.atptour.com/-/media/alias/player-gladiator-headshot/m0ej"
+  },
+  {
+    "nombre": "Ben Shelton",
+    "edad": 23,
+    "ranking": 9,
+    "pais": "Estados Unidos",
+    "foto": "https://www.atptour.com/-/media/alias/player-gladiator-headshot/s0s1"
+  },
+  {
+    "nombre": "Jack Draper",
+    "edad": 23,
+    "ranking": 10,
+    "pais": "Reino Unido",
+    "foto": "https://www.atptour.com/-/media/alias/player-gladiator-headshot/d0co"
+  }
+]
