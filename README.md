@@ -7,7 +7,7 @@
 ![Android](https://img.shields.io/badge/Android-Tablet%20%7C%20Mobile-3DDC84?style=for-the-badge&logo=android&logoColor=white)
 ![License](https://img.shields.io/badge/License-MIT-yellow?style=for-the-badge)
 
-**Aplicación profesional de arbitraje de tenis diseñada para árbitros de silla en torneos de primer nivel.**
+**Aplicación profesional de arbitraje de tenis diseñada para jueces de silla en torneos de primer nivel.**
 Inspirada visualmente en los marcadores oficiales de los Grand Slams de la ATP.
 
 <!-- DEMO: arrastra aquí tu GIF o vídeo una vez lo tengas grabado (ver sección Demo más abajo) -->
@@ -73,7 +73,7 @@ La interfaz está inspirada en los marcadores electrónicos reales de los Grand 
 - Cuadrícula con los mejores jugadores del ranking ATP
 - Fotos oficiales cargadas desde la API
 - **Pronunciación del nombre** del jugador mediante audio al seleccionarlo
-- Indicador de ranking (`#1`, `#2`...) o corona 👑 para el número 1 del mundo
+- Indicador de ranking (`#1`, `#2`...) o corona 👑 para leyendas
 - Selección limitada a exactamente 2 jugadores
 
 ### 📊 Marcador en vivo
