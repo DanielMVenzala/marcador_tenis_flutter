@@ -47,7 +47,7 @@ La interfaz está inspirada en los marcadores electrónicos reales de los Grand 
 
 ## 🎬 Demo
 
-![Demo de la app](assets/screenshots/animation.gif)
+![Demo de la app](assets/screenshots/Animation.gif)
 
 ---
 
