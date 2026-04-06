@@ -1,4 +1,4 @@
-# 🎾 ATP Tennis Scorer — Marcador de Tenis Profesional
+# 🎾 ATP Tennis Scorer — Professional Tennis Umpire App
 
 <div align="center">
 
@@ -7,193 +7,191 @@
 ![Android](https://img.shields.io/badge/Android-Tablet%20%7C%20Mobile-3DDC84?style=for-the-badge&logo=android&logoColor=white)
 ![License](https://img.shields.io/badge/License-MIT-yellow?style=for-the-badge)
 
-**Aplicación profesional de arbitraje de tenis diseñada para jueces de silla en torneos de primer nivel.**
-Inspirada visualmente en los marcadores oficiales de los Grand Slams de la ATP.
-
-<!-- DEMO: arrastra aquí tu GIF o vídeo una vez lo tengas grabado (ver sección Demo más abajo) -->
+**A professional-grade tennis scoring app built for chair umpires at top-tier tournaments.**
+Modeled after the real electronic scoreboards used at ATP Grand Slam events.
 
 </div>
 
 ---
 
-## 📋 Tabla de contenidos
+## 📋 Table of Contents
 
-- [Sobre el proyecto](#-sobre-el-proyecto)
+- [About](#-about)
 - [Demo](#-demo)
-- [Características](#-características)
-- [Flujo de la aplicación](#-flujo-de-la-aplicación)
-- [Tecnologías utilizadas](#-tecnologías-utilizadas)
-- [Arquitectura](#-arquitectura)
-- [Instalación y ejecución](#-instalación-y-ejecución)
-- [Estructura del proyecto](#-estructura-del-proyecto)
-- [API Backend](#-api-backend)
-- [Autor](#-autor)
+- [Features](#-features)
+- [App Flow](#-app-flow)
+- [Tech Stack](#-tech-stack)
+- [Architecture](#-architecture)
+- [Getting Started](#-getting-started)
+- [Project Structure](#-project-structure)
+- [Backend API](#-backend-api)
+- [Author](#-author)
 
 ---
 
-## 🏆 Sobre el proyecto
+## 🏆 About
 
-**ATP Tennis Scorer** es una aplicación Flutter orientada a dispositivos móviles y tablets en **modo horizontal** que permite a un árbitro profesional de tenis arbitrar un partido en tiempo real.
+**ATP Tennis Scorer** is a Flutter app designed for mobile devices and tablets in **landscape mode**, enabling professional tennis umpires to officiate a match in real time.
 
-La interfaz está inspirada en los marcadores electrónicos reales de los Grand Slams, con detalles como:
+The UI draws directly from the electronic scoreboards seen at Grand Slam venues, down to details like:
 
-- **Branding ROLEX** (patrocinador oficial del tiempo en los Grand Slams)
-- **Reloj en tiempo real** y **cronómetro del partido**
-- **Marcador oficial ATP**: puntos (0 / 15 / 30 / 40 / AD), juegos por set y sets
-- **Tie-break** con puntuación parcial visible en superíndice (estilo pantallas de estadio)
-- **Indicador de saque** con triángulo amarillo y rotación automática según el reglamento
+- **ROLEX branding** (official Grand Slam timekeeper)
+- **Live clock** and **match elapsed time**
+- **ATP-style scoreboard**: points (0 / 15 / 30 / 40 / AD), games per set, and sets
+- **Tie-break scores** displayed as superscripts (just like stadium screens)
+- **Serve indicator** with a yellow triangle that rotates automatically following official rules
 
 ---
 
 ## 🎬 Demo
 
-![Demo de la app](assets/screenshots/Animation.gif)
+![App demo](assets/screenshots/Animation.gif)
 
 ---
 
-## ✨ Características
+## ✨ Features
 
-### 🎯 Lógica de arbitraje completa
-- Puntuación oficial de tenis: `0 → 15 → 30 → 40 → Deuce → AD → Juego`
-- **Ventaja y deuce**: mínimo 2 puntos de diferencia para ganar el juego
-- Partidos al **mejor de 3 sets** (primero en ganar 2 sets)
-- **Tie-break a 6-6**: primero en llegar a 7 con diferencia de 2 puntos
-- **Rotación de saque** automática: tras cada juego y con patrón oficial en el tie-break (1 + bloques de 2)
-- Saque inicial **aleatorio** al comenzar el partido
+### 🎯 Full Scoring Engine
+- Official tennis scoring: `0 → 15 → 30 → 40 → Deuce → AD → Game`
+- **Advantage and deuce** logic — a 2-point margin is required to win the game
+- Best-of-3 sets format (first to win 2 sets takes the match)
+- **Tie-break at 6-6**: first to 7 with a 2-point lead
+- **Automatic serve rotation** after every game, with the correct alternating pattern during tie-breaks (1 + blocks of 2)
+- **Random first serve** at match start
 
-### 🏟️ Selección de torneo
-- 4 Grand Slams disponibles: **Australian Open, Roland Garros, Wimbledon y US Open**
-- Logos cargados en tiempo real desde el backend
-- Selección visual con borde de confirmación
+### 🏟️ Tournament Selection
+- 4 Grand Slams available: **Australian Open, Roland Garros, Wimbledon, and US Open**
+- Tournament logos fetched live from the backend
+- Visual selection with a highlighted confirmation border
 
-### 🔄 Selección de ronda
-- **Cuartos de final, Semifinal y Final**
+### 🔄 Round Selection
+- **Quarterfinals, Semifinals, and Final**
 
-### 👤 Selección de jugadores
-- Cuadrícula con los mejores jugadores del ranking ATP
-- Fotos oficiales cargadas desde la API
-- **Pronunciación del nombre** del jugador mediante audio al seleccionarlo
-- Indicador de ranking (`#1`, `#2`...) o corona 👑 para leyendas
-- Selección limitada a exactamente 2 jugadores
+### 👤 Player Selection
+- Grid layout featuring top ATP-ranked players
+- Official photos loaded from the API
+- **Player name pronunciation** via audio on selection
+- Ranking badge (`#1`, `#2`...) or crown icon 👑 for legends
+- Exactly 2 players must be selected to start
 
-### 📊 Marcador en vivo
-- Pantalla estilo **marcador oficial ATP** con:
-  - Nombre, apellidos y país de cada jugador
-  - Puntos actuales del juego en curso
-  - Juegos ganados en cada uno de los 3 sets
-  - Puntuación del tie-break en superíndice cuando aplica
-  - Indicador de saque animado
-- Dos **botones de punto** táctiles para cada jugador
-- Detección automática de fin de partido
+### 📊 Live Scoreboard
+- Match screen styled after the **official ATP scoreboard**:
+  - Full name, surname, and country for each player
+  - Current game point
+  - Games won across all 3 sets
+  - Tie-break score shown as a superscript when active
+  - Animated serve indicator
+- Two large **point buttons** — one per player, optimized for touch
+- Automatic match-end detection
 
-### ☁️ Sincronización con backend
-- Al finalizar el partido, el resultado se puede **subir automáticamente** a la base de datos del torneo
-- Formato oficial con tie-breaks: `7-6(3), 6-4`
+### ☁️ Backend Sync
+- Once the match ends, the result can be **uploaded automatically** to the tournament database
+- Results follow the official format including tie-breaks: `7-6(3), 6-4`
 
-### 📱 Diseño responsive
-- Optimizado para **tablet en horizontal** (referencia ~1000 px de ancho)
-- Adaptado a cualquier **teléfono móvil en horizontal** mediante factor de escala dinámico
+### 📱 Responsive Design
+- Optimized for **tablets in landscape** (~1000 px width baseline)
+- Scales cleanly to **any phone in landscape** via a dynamic scale factor
 
 ---
 
-## 🔀 Flujo de la aplicación
+## 🔀 App Flow
 
 ```
-Inicio
-  └─► Selección de Grand Slam
-        └─► Selección de ronda  (Cuartos / Semis / Final)
-              └─► Selección de 2 jugadores  (+ audio de pronunciación)
-                    └─► Partido en vivo
-                          └─► Fin del partido → Subir resultado → Volver al inicio
+Home
+  └─► Tournament Selection
+        └─► Round Selection  (Quarters / Semis / Final)
+              └─► Player Selection  (+ name pronunciation audio)
+                    └─► Live Match
+                          └─► Match Over → Upload Result → Back to Home
 ```
 
 ---
 
-## 🛠️ Tecnologías utilizadas
+## 🛠️ Tech Stack
 
-| Tecnología | Uso |
+| Technology | Purpose |
 |---|---|
-| [Flutter 3.41](https://flutter.dev) | Framework principal |
-| [Dart 3.11](https://dart.dev) | Lenguaje de programación |
-| [go_router](https://pub.dev/packages/go_router) | Navegación declarativa entre pantallas |
-| [just_audio](https://pub.dev/packages/just_audio) | Reproducción de audio (nombres de jugadores) |
-| [http](https://pub.dev/packages/http) | Comunicación con la API REST |
-| [google_fonts](https://pub.dev/packages/google_fonts) | Tipografías premium (EB Garamond para ROLEX) |
-| [font_awesome_flutter](https://pub.dev/packages/font_awesome_flutter) | Iconos vectoriales (corona del nº 1) |
-| [responsive_framework](https://pub.dev/packages/responsive_framework) | Soporte responsivo adicional |
+| [Flutter 3.41](https://flutter.dev) | UI framework |
+| [Dart 3.11](https://dart.dev) | Language |
+| [go_router](https://pub.dev/packages/go_router) | Declarative screen navigation |
+| [just_audio](https://pub.dev/packages/just_audio) | Audio playback (player names) |
+| [http](https://pub.dev/packages/http) | REST API communication |
+| [google_fonts](https://pub.dev/packages/google_fonts) | Premium typefaces (EB Garamond for ROLEX styling) |
+| [font_awesome_flutter](https://pub.dev/packages/font_awesome_flutter) | Vector icons (No. 1 crown) |
+| [responsive_framework](https://pub.dev/packages/responsive_framework) | Additional responsive layout support |
 
 ---
 
-## 🏗️ Arquitectura
+## 🏗️ Architecture
 
-El proyecto sigue una arquitectura en capas similar a **MVVM**, con separación clara de responsabilidades:
+The project follows a layered **MVVM-like** architecture with clear separation of concerns:
 
 ```
 lib/
-├── main.dart                        # Punto de entrada
+├── main.dart                        # Entry point
 ├── router/
-│   └── app_router.dart              # Rutas con GoRouter
-├── models/                          # Modelos de datos con serialización JSON
-├── services/                        # Capa de red: llamadas a la API REST
+│   └── app_router.dart              # GoRouter route definitions
+├── models/                          # Data models with JSON serialization
+├── services/                        # Network layer: REST API calls
 └── presentation/
-    ├── screens/                     # Pantallas (UI + estado local)
+    ├── screens/                     # Screens (UI + local state)
     └── widgets/
-        ├── tennis_game.dart         # Motor de puntuación (lógica pura)
+        ├── tennis_game.dart         # Scoring engine (pure logic)
         └── elevated_button_widget.dart
 ```
 
-### Motor de puntuación — `TennisGame`
+### Scoring Engine — `TennisGame`
 
-Clase de lógica pura que implementa el reglamento oficial:
+A pure-logic class that implements the full official ruleset:
 
-| Método | Responsabilidad |
+| Method | Responsibility |
 |---|---|
-| `pointTo(PlayerSide)` | Entrada principal: punto a P1 o P2 |
-| `_pointNormal()` | Gestión de 0 / 15 / 30 / 40 / Deuce / AD |
-| `_pointTieBreak()` | Puntuación del tie-break con patrón de saque oficial |
-| `_winGame()` | Actualiza juegos, rota saque, detecta tie-break |
-| `_winSet()` | Avanza al siguiente set y reinicia contadores |
-| `getPointText()` | Representación visual del marcador de puntos |
+| `pointTo(PlayerSide)` | Main entry point — awards a point to P1 or P2 |
+| `_pointNormal()` | Handles 0 / 15 / 30 / 40 / Deuce / AD transitions |
+| `_pointTieBreak()` | Tie-break scoring with the official serve pattern |
+| `_winGame()` | Updates games, rotates serve, triggers tie-break when needed |
+| `_winSet()` | Advances to the next set and resets counters |
+| `getPointText()` | Returns the current point as display text |
 
 ---
 
-## 🚀 Instalación y ejecución
+## 🚀 Getting Started
 
-### Requisitos previos
+### Prerequisites
 
 - [Flutter SDK](https://flutter.dev/docs/get-started/install) ≥ 3.41
-- Android SDK con **Build-Tools 35** instalado
-- Dispositivo o emulador Android en **modo landscape**
+- Android SDK with **Build-Tools 35** installed
+- Android device or emulator in **landscape mode**
 
-### Pasos
+### Setup
 
 ```bash
-# 1. Clona el repositorio
+# 1. Clone the repository
 git clone https://github.com/DanielMVenzala/marcador_tenis_flutter.git
 cd marcador_tenis_flutter
 
-# 2. Instala las dependencias
+# 2. Install dependencies
 flutter pub get
 
-# 3. Ejecuta en dispositivo conectado
+# 3. Run on a connected device
 flutter run
 ```
 
-> **Nota:** La app requiere conexión a Internet para cargar los datos de torneos y jugadores, y para subir resultados al backend.
+> **Note:** The app requires an internet connection to fetch tournament and player data from the API, and to upload match results.
 
 ---
 
-## 📁 Estructura del proyecto
+## 📁 Project Structure
 
 ```
 marcador_tenis/
-├── android/                         # Configuración Android
+├── android/                         # Android platform config
 ├── assets/
-│   ├── audio/                       # MP3: pronunciación de nombres de jugadores
+│   ├── audio/                       # MP3s: player name pronunciations
 │   ├── fonts/                       # BebasNeue-Regular.ttf
-│   └── images/                      # Logos ATP, ROLEX, torneos y jugadores
+│   └── images/                      # ATP, ROLEX, tournament & player logos
 ├── database/
-│   └── players/players.json         # Dataset local de jugadores ATP
+│   └── players/players.json         # Local ATP player dataset
 ├── lib/
 │   ├── main.dart
 │   ├── models/
@@ -221,24 +219,24 @@ marcador_tenis/
 
 ---
 
-## 🌐 API Backend
+## 🌐 Backend API
 
-La app consume dos APIs REST propias alojadas en Render:
+The app consumes two custom REST APIs hosted on Render:
 
-| Endpoint | Método | Descripción |
+| Endpoint | Method | Description |
 |---|---|---|
-| `/api/v1/jugadores` | `GET` | Lista de jugadores con foto, ranking y referencia de audio |
-| `/api/v1/torneos` | `GET` | Lista de torneos con nombre, logo y resultados por ronda |
-| `/api/v1/torneos` | `POST` | Sube el resultado de un partido finalizado al torneo |
+| `/api/v1/jugadores` | `GET` | Player list with photos, rankings, and audio references |
+| `/api/v1/torneos` | `GET` | Tournament list with names, logos, and results by round |
+| `/api/v1/torneos` | `POST` | Uploads a completed match result to the tournament |
 
 ---
 
-## 👤 Autor
+## 👤 Author
 
-**Daniel** — Proyecto de fin de ciclo DAM (Desarrollo de Aplicaciones Multiplataforma)
+**Daniel** — Final-year project, Cross-Platform Application Development (DAM)
 
 ---
 
 <div align="center">
-  <sub>Construido con Flutter · Inspirado en los marcadores oficiales de la ATP Tour</sub>
+  <sub>Built with Flutter · Inspired by the official ATP Tour scoreboards</sub>
 </div>
