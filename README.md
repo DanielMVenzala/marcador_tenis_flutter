@@ -45,6 +45,12 @@ La interfaz está inspirada en los marcadores electrónicos reales de los Grand 
 
 ---
 
+## 🎬 Demo
+
+![Demo de la app](assets/screenshots/animation.gif)
+
+---
+
 ## ✨ Características
 
 ### 🎯 Lógica de arbitraje completa
@@ -174,42 +180,6 @@ flutter run
 ```
 
 > **Nota:** La app requiere conexión a Internet para cargar los datos de torneos y jugadores, y para subir resultados al backend.
-
----
-
-## 🎬 Demo
-
-### Añadir capturas de pantalla
-
-Crea una carpeta `screenshots/` en el repositorio, sube tus imágenes y reemplaza los comentarios de arriba con:
-
-```markdown
-![Selección de torneo](screenshots/tournament_selection.png)
-![Partido en vivo](screenshots/game_screen.png)
-```
-
-### Añadir un GIF animado (recomendado)
-
-1. Graba la pantalla de tu tablet — en Windows puedes usar `Win + G` o grabar directamente desde Android Studio (`Logcat → Screen Record`)
-2. Convierte el vídeo a GIF con **[ScreenToGif](https://www.screentogif.com/)** (gratuito, Windows)
-3. En GitHub.com, edita este README → arrastra el `.gif` al área de texto → se sube automáticamente y genera la URL
-4. Reemplaza el comentario del bloque `DEMO` de la cabecera con:
-
-```markdown
-![Demo de la app](screenshots/demo.gif)
-```
-
-### Añadir un vídeo MP4 nativo (GitHub lo soporta desde 2022)
-
-1. Graba y exporta como `.mp4`
-2. En GitHub.com → edita este README → arrastra el `.mp4` al área de texto
-3. GitHub genera automáticamente la etiqueta `<video>` embebida, sin necesidad de YouTube
-
-### Alternativa: thumbnail que enlaza a YouTube
-
-```markdown
-[![Ver demo en YouTube](https://img.youtube.com/vi/TU_VIDEO_ID/maxresdefault.jpg)](https://youtu.be/TU_VIDEO_ID)
-```
 
 ---
 
