@@ -16,8 +16,8 @@ Modeled after the real electronic scoreboards used at ATP Grand Slam events.
 
 ## 📋 Table of Contents
 
-- [About](#-about)
 - [Demo](#-demo)
+- [About](#-about)
 - [Features](#-features)
 - [App Flow](#-app-flow)
 - [Tech Stack](#-tech-stack)
@@ -26,6 +26,12 @@ Modeled after the real electronic scoreboards used at ATP Grand Slam events.
 - [Project Structure](#-project-structure)
 - [Backend API](#-backend-api)
 - [Author](#-author)
+
+---
+
+## 🎬 Demo
+
+![App demo](assets/screenshots/Animation.gif)
 
 ---
 
@@ -41,11 +47,6 @@ The UI draws directly from the electronic scoreboards seen at Grand Slam venues,
 - **Tie-break scores** displayed as superscripts (just like stadium screens)
 - **Serve indicator** with a yellow triangle that rotates automatically following official rules
 
----
-
-## 🎬 Demo
-
-![App demo](assets/screenshots/Animation.gif)
 
 ---
 
